@@ -1,0 +1,1 @@
+(function(e,t){"use strict";let n;var i={onLoad:function(){n=t.registerCommand({name:"hello",displayName:"hello",description:"Returns a greeting",displayDescription:"Returns a greeting",execute:function(){return"hello"},applicationId:-1,inputType:0,type:0})},onUnload:function(){n()}};return e.default=i,Object.defineProperty(e,"__esModule",{value:!0}),e})({},vendetta.commands);
