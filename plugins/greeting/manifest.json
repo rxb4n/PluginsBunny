@@ -1,0 +1,27 @@
+{
+
+    "name": "Greetings Plugin",
+
+    "description": "A tePligin to greet you.",
+
+    "authors": [
+
+        {
+
+            "name": "Breado",
+
+            "id": "1034473954636726334"
+
+        }
+
+    ],
+
+    "main": "src/index.js",
+
+    "vendetta": {
+
+        "icon": "ic_badge_staff"
+
+    }
+
+}
