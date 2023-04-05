@@ -16,13 +16,16 @@ export default {
 
       displayDescription: "Returns a greeting",
 
-      execute: () => "hello",
+    
 
-      applicationId: -1,
 
-      inputType: 0,
 
-      type: 0,
+      inputType: ApplicationCommandInputType.BUILT_IN_TEXT,
+      execute(args, context){
+        return { content: "Greetings" }
+      }
+
+
 
     });
 
