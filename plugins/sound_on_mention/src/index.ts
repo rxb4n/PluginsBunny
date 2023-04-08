@@ -1,27 +1,31 @@
+  
+// Still need to fruther develop this lol
 import { ReactNative } from "@vendetta/metro/common";
+
 import { logger } from '@vendetta';
-        
-        
 
+const { DCDSoundManager } = ReactNative.NativeModules;
 
-const { DCDSoundManager } = ReactNative.NativeModules
+const DISCORDO_URL = "https://discord.com/assets/ae7d16bb2eea76b9b9977db0fad66658.mp3";
 
-const DISCORDO_URL = "https://discord.com/assets/ae7d16bb2eea76b9b9977db0fad66658.mp3"
+const SOUND_ID = 232;
 
-const SOUND_ID = 232
-
-const prepareDiscordo = () => new Promise((resolve) => DCDSoundManager.prepare(DISCORDO_URL, "notification", SOUND_ID, resolve))
+const prepareDiscordo = () => new Promise((resolve) => DCDSoundManager.prepare(DISCORDO_URL, "notification", SOUND_ID, resolve));
 
 export default {
 
     onMention: () => {
 
-        prepareDiscordo().then(() => DCDSoundManager.play(SOUND_ID))
+        try {
 
-    } catch (err) {
-        logger.log(err)
+            prepareDiscordo().then(() => DCDSoundManager.play(SOUND_ID));
+
+        } catch (err) {
+
+            logger.log(err);
+
+        }
+
     }
-    
 
-}
-//code stolen from Discordo Plugin
+};
