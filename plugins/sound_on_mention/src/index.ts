@@ -1,4 +1,8 @@
 import { ReactNative } from "@vendetta/metro/common";
+import { logger } from '@vendetta';
+        
+        
+
 
 const { DCDSoundManager } = ReactNative.NativeModules
 
@@ -14,7 +18,10 @@ export default {
 
         prepareDiscordo().then(() => DCDSoundManager.play(SOUND_ID))
 
+    } catch (err) {
+        logger.log(err)
     }
+    
 
 }
 //code stolen from Discordo Plugin
