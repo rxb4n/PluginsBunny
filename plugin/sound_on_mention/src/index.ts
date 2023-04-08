@@ -10,7 +10,7 @@ const prepareDiscordo = () => new Promise((resolve) => DCDSoundManager.prepare(D
 
 export default {
 
-    onLoad: () => {
+    onMention: () => {
 
         prepareDiscordo().then(() => DCDSoundManager.play(SOUND_ID))
 
