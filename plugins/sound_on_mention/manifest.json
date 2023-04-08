@@ -1,0 +1,27 @@
+{
+
+    "name": "Sound on Mention",
+
+    "description": "Plays a sound when you get mentioned",
+
+    "authors": [
+
+        {
+
+            "name": "Breado",
+
+            "id": "1034473954636726334"
+
+        }
+
+    ],
+
+    "main": "src/index.ts",
+
+    "vendetta": {
+
+        "icon": "ic_badge_chat"
+
+    }
+
+}
