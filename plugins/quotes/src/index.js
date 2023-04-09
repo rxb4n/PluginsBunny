@@ -67,7 +67,7 @@ quotecommands.push(registerCommand({
 
 
 
- execute: async (args, context) => {
+execute: async (args, context) => {
 
     if (args.find((o: any) => o.name === "age")) {
 
