@@ -24,6 +24,7 @@ export default {
             category = "inspirational";
             try {
               const response = await axios.get("https://api.quotable.io/quotes/random");
+              return { content: response.data };
             } catch (error) {
               if (error instanceof TypeError) {
                 logger.log("TypeError occurred", error);
