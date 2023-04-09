@@ -1,4 +1,4 @@
-
+import { findByProps } from "@vendetta/metro"
 import { logger } from '@vendetta'
 import { registerCommand } from '@vendetta/commands'
 
