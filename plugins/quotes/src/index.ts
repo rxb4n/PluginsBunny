@@ -74,15 +74,15 @@ export default {
 
 
 
-                }]
+                }],
 
                 execute: async (args, ctx) => {
-                    return { content: "Ello, i work"}
+                    return { content: "Ello, i work"};
                 }
             }))
         } catch (err) {
             logger.log(err)
-            return {conent: "err. check the logs"}
+            return {conent: "err. check the logs"};
         }
     }
 }
