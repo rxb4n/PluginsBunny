@@ -64,7 +64,6 @@ quotecommands.push(registerCommand({
 
   
 
-  //applicationId: "-1",
 
    inputType: 1,
 
