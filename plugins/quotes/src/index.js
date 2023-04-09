@@ -53,7 +53,7 @@ quotecommands.push(registerCommand({
     try {
       if (options.age) {
       category = 'age';
-    } else (options.anger) {
+    } else if (options.anger) {
       category = 'anger';
     } else if (options.freedom) {
       category = 'freedom';
