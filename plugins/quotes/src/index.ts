@@ -26,7 +26,7 @@ export default {
                     required: false
 
 
-    },{
+                },{
 
                     name: "anger",
 
@@ -38,7 +38,7 @@ export default {
                     required: false
 
 
-    }, {
+                },{
 
                     name: "love",
 
@@ -49,7 +49,7 @@ export default {
                     displayDescription: "Get a quote about love",
                     required: false
 
-    },{
+                },{
 
                     name: "hope",
 
@@ -61,7 +61,7 @@ export default {
                     required: false
 
 
-    }, {
+                },{
 
                     name: "leadership",
 
