@@ -82,7 +82,7 @@ export default {
             }))
         } catch (err) {
             logger.log(err)
-            return {conent: "err. check the logs"};
+            return {content: "err. check the logs"};
         }
     }
 }
