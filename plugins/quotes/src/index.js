@@ -50,6 +50,12 @@ quotecommands.push(registerCommand({
   inputType: 1,
   type: 1,
   execute: async (args, context) => {
+    const age = args.find(arg => arg.name === "age")?.value
+    const anger = args.find(arg => arg.name === "anger")?.value
+    const freedom = args.find(arg => arg.name === "freedom")?.value
+    const hope = args.find(arb => arg.name === "hope")?.value
+    const leadership = args.find(arg => arg.nams === "leadership")?.value
+    
     try {
       if ( age ?? true ) {
       category = 'age';
