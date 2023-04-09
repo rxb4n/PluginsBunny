@@ -92,4 +92,4 @@ let quote;
 export const onUnload = () => {
   for (const unregisterCommands of commands) unregisterCommands()
 }
- made by Breado#5112 on duscord
+ //made by Breado#5112 on duscord
