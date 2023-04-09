@@ -1,4 +1,4 @@
-//Plugin made by Breado#5112 on discord
+ // Code inspired by LoveFemboys //Plugin made by Breado#5112 on discord
 import { logger } from '@vendetta'
 import { registerCommand } from '@vendetta/commands'
 
@@ -85,9 +85,7 @@ quotecommands.push(
           },
           error: function ajaxError(jqXHR) {
             logger.log('Error: ', jqXHR.responseText);
-            return {
-              'Oops! Something went wrong with the API. Check tha logs.'
-            }
+            return { 'Oops! Something went wrong with the API. Check tha logs.' }
           }
         });
 
@@ -104,4 +102,9 @@ export const onUnload = () => {
   for (const unregisterCommands of commands) unregisterCommands()
 }
 
+ 
 
+
+
+
+   
