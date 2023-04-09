@@ -51,15 +51,15 @@ quotecommands.push(registerCommand({
   type: 1,
   execute: async (args, context) => {
     try {
-      if (options.age) {
+      if ( age ?? true ) {
       category = 'age';
-    } else if (options.anger) {
+    } else if ( anger ?? true ) {
       category = 'anger';
-    } else if (options.freedom) {
+    } else if ( freedom ?? true ) {
       category = 'freedom';
-    } else if (options.hope) {
+    } else if ( hope ?? true ) {
       category = 'hope';
-    } else if (options.leadership) {
+    } else if ( leadership ?? true) {
       category = 'leadership';
     }
 
@@ -92,4 +92,4 @@ let quote;
 export const onUnload = () => {
   for (const unregisterCommands of commands) unregisterCommands()
 }
- //made by Breado#5112 on duscord
+ //made by Breado#5112 on duscord with great help of sdhhhh's Femboy Plugin
