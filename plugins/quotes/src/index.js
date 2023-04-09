@@ -87,7 +87,7 @@ let quote;
   }
 
   }
-}));
+));
 
 export const onUnload = () => {
   for (const unregisterCommands of commands) unregisterCommands()
