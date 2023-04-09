@@ -53,7 +53,7 @@ export default {
           },
         })
       );
-      return { content: response };
+
     } catch (err) {
       logger.log(err);
       return { content: "CLIENT-SIDE Error. Check the logs" };
