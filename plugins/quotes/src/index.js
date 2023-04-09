@@ -76,7 +76,7 @@ let quote;
       },
       error: function ajaxError(jqXHR) {
         logger.log('Error: ', jqXHR.responseText);
-        return 'Oops! Something went wrong with the API. Check tha logs.'
+        return 'Oops! Something went wrong with the API. Check tha logs.';
       }
     }); 
     return { quote };
