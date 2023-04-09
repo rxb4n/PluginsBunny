@@ -23,31 +23,126 @@ export default {
           execute: async (args, ctx) => {
             category = "inspirational";
             try {
-              
-                 let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=hope`, {
+
+                 let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+
                  headers: {
+
                    "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
+
                    "Content-Type": "application/json"
+
                  }
-                 }).then(res => res.json());
 
-                 return { content: response};
+            });
 
-            } catch (error) {
-              if (error instanceof TypeError) {
-                logger.log("TypeError occurred", error);
-                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
-              } else if (error instanceof SyntaxError) {
-                logger.log("SyntaxError occurred", error);
-                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
-              } else if (error instanceof RangeError) {
-                logger.log("RangeError occurred", error);
-                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
-              } else if (error instanceof Error) {
-                logger.log("Unknown error occurred", error);
-                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
-              }
-            }
+  
+
+            if (!response.ok) {
+
+              throw new Error(`${response.status}: ${response.statusText}`);
+
+             }
+  
+  
+
+            let data = await response.json();
+
+   
+
+            return { content: data };
+
+  
+
+} catch (error) {
+
+  if (error instanceof TypeError) {
+
+    logger.log("TypeError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof SyntaxError) {
+
+    logger.log("SyntaxError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof RangeError) {
+
+    logger.log("RangeError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof Error) {
+
+    logger.log("Unknown error occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  }
+
+}
+
+  let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+
+    headers: {
+
+      "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
+
+      "Content-Type": "application/json"
+
+    }
+
+  });
+
+  
+
+  if (!response.ok) {
+
+    throw new Error(`${response.status}: ${response.statusText}`);
+
+  }
+
+  
+
+  let data = await response.json();
+
+  
+
+  return data;
+
+  
+
+} catch (error) {
+
+  if (error instanceof TypeError) {
+
+    logger.log("TypeError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof SyntaxError) {
+
+    logger.log("SyntaxError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof RangeError) {
+
+    logger.log("RangeError occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  } else if (error instanceof Error) {
+
+    logger.log("Unknown error occurred", error);
+
+    return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
+
+  }
+
+}
           },
         })
       );
