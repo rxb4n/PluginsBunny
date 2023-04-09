@@ -18,43 +18,43 @@ quotecommands.push(registerCommand({
 
   choices: [{
 
-    name = "age",
+    name: "age",
 
-    displayName "age",
+    displayName: "age",
 
-    value = "display"
-
-  },{
-
-    name = "anger",
-
-    displayName = "anger",
-
-    value = "display"
-
-  }, {
-
-    name = "love",
-
-    displayName = "love",
-
-    value = "display"
+    value:  "display"
 
   },{
 
-    name = "hope",
+    name: "anger",
 
-    displayName = "hope",
+    displayName: "anger",
 
-    value = "display"
+    value: "display"
 
   }, {
 
-    name = "leadership",
+    name: "love",
 
-    displayName = "leadership",
+    displayName: "love",
 
-    value = "display"
+    value: "display"
+
+  },{
+
+    name: "hope",
+
+    displayName: "hope",
+
+    value: "display"
+
+  }, {
+
+    name: "leadership",
+
+    displayName: "leadership",
+
+    value:"display"
 
   }
 
