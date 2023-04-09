@@ -56,7 +56,7 @@ quotecommands.push(registerCommand({
 
     value:"display"
 
-  }
+
 
   }],
 
