@@ -24,7 +24,9 @@ export default {
           type: 1,
           applicationId: -1,
           inputType: 1,
-          execute: async () => { return { content: await qoute() }}
+          execute: async () => { 
+            return { content: await qoute() }
+          }
         })
       );
 
