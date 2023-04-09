@@ -25,7 +25,7 @@ export default {
               let response = await fetch(`https://api.quotable.io/quotes/random`, {
                 headers: {
                 //  "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
-                  "Content-Type": "application/json"
+                 // "Content-Type": "application/json"
                 }
               });
               if (!response.ok) {
