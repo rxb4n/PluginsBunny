@@ -6,6 +6,7 @@ const MessageActions = findByProps("sendMessage", "receiveMessage");
 
 let quoteCMD = [];
 let category;
+let response
 
 export default {
   onLoad: () => {
@@ -22,7 +23,7 @@ export default {
           execute: async (args, ctx) => {
             category = "inspirational";
             try {
-              let response = await fetch(`https://api.quotable.io/quotes/random`, {
+                response = await fetch(`https://api.quotable.io/quotes/random`, {
                 headers: {
                 //  "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
                  // "Content-Type": "application/json"
@@ -52,6 +53,7 @@ export default {
           },
         })
       );
+      return { content: response };
     } catch (err) {
       logger.log(err);
       return { content: "CLIENT-SIDE Error. Check the logs" };
