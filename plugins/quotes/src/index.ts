@@ -7,8 +7,21 @@ let quoteCMD = [];
 // Code from the facts plugin
 const qoute = async function () {
   const response = await fetch (`https://api.quotable.io/quotes/random`);
+    if (!response.ok) {
+
+    throw new Error(`Failed to fetch quote: ${response.status} ${response.statusText}`);
+
+  }
+
   const resp = await response.json();
-  return resp["0"];
+
+  if (!resp.content || !resp.author) {
+
+    throw new Error("Empty response from the API");
+
+  }
+
+  return `${resp.content} - ${resp.author}`;
 }
 
 
