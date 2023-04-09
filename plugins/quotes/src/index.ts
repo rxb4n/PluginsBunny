@@ -1,4 +1,4 @@
-import axios from "axios"
+
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
 import { findByProps } from "@vendetta/metro";
@@ -23,8 +23,16 @@ export default {
           execute: async (args, ctx) => {
             category = "inspirational";
             try {
-              const response = await axios.get("https://api.quotable.io/quotes/random");
-              return { content: response.data };
+              
+                 let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+                 headers: {
+                   "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
+                   "Content-Type": "application/json"
+                 }
+                 }).then(res => res.json());
+
+                 return { content: response};
+
             } catch (error) {
               if (error instanceof TypeError) {
                 logger.log("TypeError occurred", error);
