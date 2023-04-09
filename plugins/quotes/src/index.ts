@@ -27,16 +27,16 @@ export default {
             } catch (error) {
               if (error instanceof TypeError) {
                 logger.log("TypeError occurred", error);
-                return { content: "There was an error processing your request. Please try again later." };
+                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
               } else if (error instanceof SyntaxError) {
                 logger.log("SyntaxError occurred", error);
-                return { content: "There was an error processing your request. Please try again later." };
+                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
               } else if (error instanceof RangeError) {
                 logger.log("RangeError occurred", error);
-                return { content: "There was an error processing your request. Please try again later." };
+                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
               } else if (error instanceof Error) {
                 logger.log("Unknown error occurred", error);
-                return { content: "There was an error processing your request. Please try again later." };
+                return { content: "There was an error processing your request. Please try again later. Check the debug logs for further info." };
               }
             }
           },
