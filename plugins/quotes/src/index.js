@@ -136,7 +136,7 @@ quotecommands.push(registerCommand({
 
 onUnload: () => {
 
-  helloCmd();
+  quotecommand();
 
 },
 
