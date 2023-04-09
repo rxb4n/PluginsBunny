@@ -24,7 +24,9 @@ export default {
         execute: async (args, ctx) => {
           let category: string;
 
-          function getRandomWord(): string {
+          
+
+          function getRandomWord(): Promise<{content: any}>{
             const words: string[] = [
               'age', 'alone', 'amazing', 'anger', 'architecture', 'art', 'attitude', 'beauty', 'best', 'birthday',
               'business', 'car', 'change', 'communications', 'computers', 'cool', 'courage', 'dad', 'dating', 'death',
@@ -34,23 +36,45 @@ export default {
               'imagination', 'inspirational', 'intelligence', 'jealousy', 'knowledge', 'leadership', 'learning', 'legal',
               'life', 'love', 'marriage', 'medical', 'men', 'mom', 'money', 'morning', 'movies', 'success'
             ];
-            const randomIndex = Math.floor(Math.random() * words.length);
-            category = words[randomIndex];
+            return new Promise<{content: any}>((resolve, reject) => {
+
             $.ajax({
+
               method: 'GET',
+
               url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+
               headers: { 'X-Api-Key': 'et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW'},
+
               contentType: 'application/json',
+
               success: function(result) {
-                resultData = result;
-              },
+
+               resolve({ content: result });
+
+             },
+
               error: function ajaxError(jqXHR) {
-                logger.log('Error: ', jqXHR.responseText);
-              }
-            });
-            return { content: resultData };
-          }
-        }
+    
+               reject(new Error(jqXHR.responseText));
+
+             }
+
+        });
+
+  });
+
+}
+          getRandomWord().then((result) => {
+            return {content: result.content }
+          }).catch((error) => {
+            logger.log(error);
+          });
+
+          
+          
+          
+          
       }))
     } catch (err) {
       logger.log(err)
@@ -58,9 +82,14 @@ export default {
     }
   }
 }
-//
 
+  
 
+export const onUnload = () => {
+
+    for (const unregisterCommands of commands) unregisterCommands()
+
+}
 
 
                 
