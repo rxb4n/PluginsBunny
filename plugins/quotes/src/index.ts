@@ -24,7 +24,7 @@ export default {
             category = "inspirational";
             try {
               
-                 let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+                 let response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=hope`, {
                  headers: {
                    "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
                    "Content-Type": "application/json"
