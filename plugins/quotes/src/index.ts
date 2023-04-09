@@ -42,27 +42,22 @@ export default {
 
             try {
 
-              const response = await fetch(
+              
 
-                `https://api.api-ninjas.com/v1/quotes?category=${category}`,
+let response = await fetch(`'https://api.api-ninjas.com/v1/quotes?category=${category}`, {
 
-                {
+  headers: {
 
-                  headers: {
+    "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
 
-                    "X-Api-Key": "et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW",
+    "Content-Type": "application/json"
 
-                    "Content-Type": "application/json",
+  }
 
-                  },
+}).then(res => res.json());
 
-                }
+return response; 
 
-              );
-
-              const data = await response.json();
-
-              return { content: data };
 
             } catch (error) {
 
