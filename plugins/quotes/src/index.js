@@ -69,7 +69,8 @@ quotecommands.push(registerCommand({
   
   execute: async (args, context) => {
    try {
-    if (args.find((o: any) => o.name === "age")) {
+      let category = "inspirational"
+      if (args.find((o: any) => o.name === "age")) {
       category = 'age';
     } else if (args.find((o: any) => o.name === "anger")) {
       category = 'anger';
