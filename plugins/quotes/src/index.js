@@ -60,7 +60,7 @@ quotecommands.push(registerCommand({
 
   }],
 
-  required: false
+  required: false,
 
   applicationId: "",
   inputType: 1,
