@@ -74,7 +74,7 @@ quotecommands.push(registerCommand({
                 method: 'GET',
                 url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
                 headers: {
-                    'X-Api-Key': 'YOUR_API_KEY'
+                    'X-Api-Key': 'lBJi2EN//oMq77g6yAYDfg==uqSODuxtuE2VY1T4'
                 },
                 contentType: 'application/json',
                 success: function(result) {
