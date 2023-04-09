@@ -134,8 +134,10 @@ quotecommands.push(registerCommand({
 
       
 
-export const onUnload = () => {
-  for (const unregisterCommands of commands) unregisterCommands()
-}
+onUnload: () => {
+
+  helloCmd();
+
+},
 
  //made by Breado#5112 on duscord with great help of sdhhhh's Femboy Plugin
