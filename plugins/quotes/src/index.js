@@ -64,7 +64,7 @@ quotecommands.push(registerCommand({
 
   applicationId: "",
   inputType: 1,
-  type: 1
+  type: 1,
   
   
   execute: async (args, context) => {
