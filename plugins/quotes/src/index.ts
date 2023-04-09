@@ -38,7 +38,7 @@ export default {
               headers: { 'X-Api-Key': 'et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW'},
               contentType: 'application/json',
               success: function(result) {
-                return { content: result };
+                return { content: '' + result };
               },
               error: function ajaxError(jqXHR) {
                 logger.log('Error: ', jqXHR.responseText);
