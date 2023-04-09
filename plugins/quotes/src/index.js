@@ -57,13 +57,13 @@ quotecommands.push(registerCommand({
         try {
             if (options.age) {
                 category = 'age';
-            } else(options.anger) {
+            } else if (options.anger) {
                 category = 'anger';
-            } else(options.freedom) {
+            } else if (options.freedom) {
                 category = 'freedom';
-            } else(options.hope) {
+            } else if (options.hope) {
                 category = 'hope';
-            } else(options.leadership) {
+            } else if (options.leadership) {
                 category = 'leadership';
             }
 
