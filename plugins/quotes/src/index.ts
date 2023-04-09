@@ -2,7 +2,9 @@
 // Check out sdhhhhs Femboy plugin, it helped me coding a functional one
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
+import { findByProps } from "@vendetta/metro"
 
+const MessageActions = findByProps("sendMessage", "receiveMessage")
 let quoteCMD = [];
 
 export default {
@@ -38,7 +40,11 @@ export default {
               headers: { 'X-Api-Key': 'et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW'},
               contentType: 'application/json',
               success: function(result) {
-                return { content: '' + result };
+                MessageActions.sendMessage(ctx.channel.id, {
+
+                    content: result
+
+                })
               },
               error: function ajaxError(jqXHR) {
                 logger.log('Error: ', jqXHR.responseText);
