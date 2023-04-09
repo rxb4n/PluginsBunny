@@ -56,7 +56,7 @@ let response = await fetch(`'https://api.api-ninjas.com/v1/quotes?category=${cat
 
 }).then(res => res.json());
 
-return response; 
+return { content: response }; 
 
 
             } catch (error) {
