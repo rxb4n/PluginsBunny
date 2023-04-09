@@ -66,7 +66,7 @@ export default {
 
               logger.log(error);
 
-              return { content: "Error. Check the logs" };
+              return { content: "API-SIDE Error. Check the logs" };
 
             }
 
@@ -80,7 +80,7 @@ export default {
 
       logger.log(err);
 
-      return { content: "Error. Check the logs" };
+      return { content: "CLIENT-SIDE Error. Check the logs" };
 
     }
 
