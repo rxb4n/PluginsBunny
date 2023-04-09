@@ -1,89 +1,61 @@
+// Plugin created by Breado#5112
+// Check out sdhhhhs Femboy plugin, it helped me coding a functional one
 import { logger } from "@vendetta";
 import { registerCommand } from "@vendetta/commands";
 
 let quoteCMD = [];
 
 export default {
-    onLoad: () => {
-        try {
-            quoteCMD.push(registerCommand({
-                name: "quote",
-                displayName: "quote",
-                description: "generates a quote.",
-                displayDescription: "generates a quote",
-                type: 1,
-                //@ts-ignore
-                applicationId: -1,
-                inputType: 1,
-                options: [{
-                    name: "age",
+  onLoad: () => {
+    try {
+      quoteCMD.push(registerCommand({
+        name: "quote",
+        displayName: "quote",
+        description: "generates a quote.",
+        displayDescription: "generates a quote",
+        type: 1,
+        //@ts-ignore
+        applicationId: -1,
+        inputType: 1,
+        execute: async (args, ctx) => {
+          let category: string;
 
-                    displayName: "age",
-    
-                    description: "Get a quote about age",
-    
-                    displayDescription: "Get a quote about age",
-                    required: false,
-                    value: "yesh"
-
-
-                },{
-
-                    name: "anger",
-
-                    displayName: "anger",
-
-                    description: "Get a quote about anger",
-        
-                    displayDescription: "Get a quote about anger",
-                    required: false
-
-
-                },{
-
-                    name: "love",
-
-                    displayName: "love",
-
-                    description: "Get a quote about love",
-    
-                    displayDescription: "Get a quote about love",
-                    required: false
-
-                },{
-
-                    name: "hope",
-
-                    displayName: "hope",
-
-                    description: "Get a quote about hope",
-        
-                    displayDescription: "Get a quote about hope",
-                    required: false
-
-
-                },{
-
-                    name: "leadership",
-
-                    displayName: "leadership",
-
-                    description: "Get a quote about leadership",
-    
-                    displayDescription: "Get a quote about leadership",
-                    required: false
-
-
-
-                }],
-
-                execute: async (args, ctx) => {
-                    return { content: "Ello, i work"};
-                }
-            }))
-        } catch (err) {
-            logger.log(err)
-            return {content: "err. check the logs"};
+          function getRandomWord(): string {
+            const words: string[] = [
+              'age', 'alone', 'amazing', 'anger', 'architecture', 'art', 'attitude', 'beauty', 'best', 'birthday',
+              'business', 'car', 'change', 'communications', 'computers', 'cool', 'courage', 'dad', 'dating', 'death',
+              'design', 'dreams', 'education', 'environmental', 'equality', 'experience', 'failure', 'faith', 'family',
+              'famous', 'fear', 'fitness', 'food', 'forgiveness', 'freedom', 'friendship', 'funny', 'future', 'god',
+              'good', 'government', 'graduation', 'great', 'happiness', 'health', 'history', 'home', 'hope', 'humor',
+              'imagination', 'inspirational', 'intelligence', 'jealousy', 'knowledge', 'leadership', 'learning', 'legal',
+              'life', 'love', 'marriage', 'medical', 'men', 'mom', 'money', 'morning', 'movies', 'success'
+            ];
+            const randomIndex = Math.floor(Math.random() * words.length);
+            category = words[randomIndex];
+            $.ajax({
+              method: 'GET',
+              url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+              headers: { 'X-Api-Key': 'et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW'},
+              contentType: 'application/json',
+              success: function(result) {
+                return { content: result };
+              },
+              error: function ajaxError(jqXHR) {
+                logger.log('Error: ', jqXHR.responseText);
+              }
+            });
+          }
         }
+      }))
+    } catch (err) {
+      logger.log(err)
+      return {content: "err. check the logs"};
     }
+  }
 }
+one
+
+
+
+
+                
