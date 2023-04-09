@@ -6,6 +6,8 @@ import { findByProps } from "@vendetta/metro"
 
 const MessageActions = findByProps("sendMessage", "receiveMessage")
 let quoteCMD = [];
+var category;
+var resultData;
 
 export default {
   onLoad: () => {
@@ -40,16 +42,13 @@ export default {
               headers: { 'X-Api-Key': 'et6XfFJdPxmYaOgW3lgvRnT2wj1aU5ea6HHMxLxW'},
               contentType: 'application/json',
               success: function(result) {
-                MessageActions.sendMessage(ctx.channel.id, {
-
-                    content: result
-
-                })
+                resultData = result;
               },
               error: function ajaxError(jqXHR) {
                 logger.log('Error: ', jqXHR.responseText);
               }
             });
+            return { content resultData };
           }
         }
       }))
