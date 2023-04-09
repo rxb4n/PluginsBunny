@@ -16,13 +16,17 @@ quotecommands.push(registerCommand({
 
   displayDescription: "Get a quote",
 
-  choices: [{
+  options: [{
 
     name: "age",
 
     displayName: "age",
+    
+    description: "Get a quote about age",
+    
+    displayDescription: "Get a quote about age",
+    required: false
 
-    value:  "display"
 
   },{
 
@@ -30,7 +34,11 @@ quotecommands.push(registerCommand({
 
     displayName: "anger",
 
-    value: "display"
+    description: "Get a quote about anger",
+    
+    displayDescription: "Get a quote about anger",
+    required: false
+
 
   }, {
 
@@ -38,7 +46,10 @@ quotecommands.push(registerCommand({
 
     displayName: "love",
 
-    value: "display"
+    description: "Get a quote about love",
+    
+    displayDescription: "Get a quote about love",
+    required: false
 
   },{
 
@@ -46,7 +57,11 @@ quotecommands.push(registerCommand({
 
     displayName: "hope",
 
-    value: "display"
+    description: "Get a quote about hope",
+    
+    displayDescription: "Get a quote about hope",
+    required: false
+
 
   }, {
 
@@ -54,34 +69,40 @@ quotecommands.push(registerCommand({
 
     displayName: "leadership",
 
-    value:"display"
+    description: "Get a quote about leadership",
+    
+    displayDescription: "Get a quote about leadership",
+    required: false
 
 
 
   }],
 
-  required: false,
-
-  applicationId: "",
+  applicationId: "-1",
   inputType: 1,
   type: 1,
   
   
   execute: async (args, context) => {
    try {
-      let category = "inspirational"
-      if (args.find((o: any) => o.name === "age")) {
-      category = 'age';
-    } else if (args.find((o: any) => o.name === "anger")) {
-      category = 'anger';
-    } else if (args.find((o: any) => o.name === "love")) {
-      category = 'love';
-    } else if (args.find((o: any) => o.name === "hope")) {
-      category = 'hope';
-    } else if (args.find((o: any) => o.name === "leadership")) {
-      category = 'leadership';
-    }
 
+    const age = args.find(arg => arg.name === "age")?.value
+    const anger = args.find(arg => arg.name === "anger")?.value
+    const love= args.find(arg => arg.name === "love")?.value
+    const leadership = args.find(arg => arg.name === "leadership")?.value
+    const hope = args.find(arg => arg.name === "hope")?.value
+
+    if (age ?? true) {
+      category = "age";
+    } else if ( anger ?? true ) {
+      category = "anger";
+    } else if ( love ?? true) {
+      category = "love";
+    } else if ( leadership ?? true ) {
+      category = "leadership"
+    } else {
+      category = "hope";
+    }
     let quote;
 
     // Make API request
@@ -103,7 +124,7 @@ quotecommands.push(registerCommand({
 
   } catch (err) {
     logger.log(err);
-    return { content: "An error occured while trying to get a quote. Check the Debug logs for more info! "};
+    return { content: "An error occurred while trying to get a quote. Check the Debug logs for more info! "};
   }
 }
 
@@ -114,9 +135,7 @@ quotecommands.push(registerCommand({
       
 
 export const onUnload = () => {
-
   for (const unregisterCommands of commands) unregisterCommands()
-
 }
 
  //made by Breado#5112 on duscord with great help of sdhhhh's Femboy Plugin
