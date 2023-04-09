@@ -63,79 +63,51 @@ quotecommands.push(registerCommand({
   required: false
 
 
-
-
-
-
-execute: async (args, context) => {
-
+  
+ execute: async (args, context) => {
+  try {
     if (args.find((o: any) => o.name === "age")) {
-
       category = 'age';
-
-  } else if (args.find((o: any) => o.name === "anger")) {
-
+    } else if (args.find((o: any) => o.name === "anger")) {
       category = 'anger';
-
-  } else if (args.find((o: any) => o.name === "love")) {
-
+    } else if (args.find((o: any) => o.name === "love")) {
       category = 'love';
-
-  } else if (args.find((o: any) => o.name === "hope")) {
-
+    } else if (args.find((o: any) => o.name === "hope")) {
       category = 'hope';
-
-  } else if (args.find((o: any) => o.name === "leadership")) {
-
+    } else if (args.find((o: any) => o.name === "leadership")) {
       category = 'leadership';
+    }
 
-  }
-
-let quote;
+    let quote;
 
     // Make API request
-
     $.ajax({
-
       method: 'GET',
-
       url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-
       headers: { 'X-Api-Key': 'lBJi2EN//oMq77g6yAYDfg==uqSODuxtuE2VY1T4'},
-
       contentType: 'application/json',
-
       success: function(result) {
-
-        const quote = result[0].content;
-
+        quote = result[0].content;
       },
-
       error: function ajaxError(jqXHR) {
-
         logger.log('Error: ', jqXHR.responseText);
-
         return 'Oops! Something went wrong with the API. Check tha logs.';
-
       }
-
     }); 
 
     return { quote };
 
-    } catch (err) {
-
-      logger.log(err);
-
-      return { content: "An error occured while trying to get a quote. Check the Debug logs for more info! "};
-
-    }
-
+  } catch (err) {
+    logger.log(err);
+    return { content: "An error occured while trying to get a quote. Check the Debug logs for more info! "};
   }
+}
 
-  }
 
-));
+
+
+
+      
 
 export const onUnload = () => {
 
