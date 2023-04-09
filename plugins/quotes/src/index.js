@@ -4,75 +4,79 @@ import { logger } from '@vendetta'
 
 import { registerCommand } from '@vendetta/commands'
 
-let quotecommands = []
+let quotecommands;
 
-quotecommands.push(registerCommand({
+export default {
 
-  name: "Quotes",
+  onLoad: () => {
 
-  displayName: "Quotes",
+    quotecommands = registerCommand({
 
-  description: "Get a quote",
+      name: "Quotes",
 
-  displayDescription: "Get a quote",
+      displayName: "Quotes",
 
-  options: [{
+      description: "Get a quote",
 
-    name: "age",
+      displayDescription: "Get a quote",
 
-    displayName: "age",
+      options: [{
+
+        name: "age",
+
+        displayName: "age",
     
-    description: "Get a quote about age",
+        description: "Get a quote about age",
     
-    displayDescription: "Get a quote about age",
-    required: false
+        displayDescription: "Get a quote about age",
+        required: false
 
 
-  },{
+    },{
 
-    name: "anger",
+        name: "anger",
 
-    displayName: "anger",
+        displayName: "anger",
 
-    description: "Get a quote about anger",
+        description: "Get a quote about anger",
     
-    displayDescription: "Get a quote about anger",
-    required: false
+        displayDescription: "Get a quote about anger",
+        required: false
 
 
-  }, {
+    }, {
 
-    name: "love",
+        name: "love",
 
-    displayName: "love",
+        displayName: "love",
 
-    description: "Get a quote about love",
+        description: "Get a quote about love",
     
-    displayDescription: "Get a quote about love",
-    required: false
+        displayDescription: "Get a quote about love",
+        required: false
 
-  },{
+    },{
 
-    name: "hope",
+        name: "hope",
 
-    displayName: "hope",
+        displayName: "hope",
 
-    description: "Get a quote about hope",
+        description: "Get a quote about hope",
     
-    displayDescription: "Get a quote about hope",
-    required: false
+        displayDescription: "Get a quote about hope",
+        required: false
 
 
-  }, {
+    }, {
 
-    name: "leadership",
+        name: "leadership",
 
-    displayName: "leadership",
+        displayName: "leadership",
 
-    description: "Get a quote about leadership",
+        description: "Get a quote about leadership",
     
-    displayDescription: "Get a quote about leadership",
-    required: false
+        displayDescription: "Get a quote about leadership",
+        required: false
 
 
 
@@ -132,9 +136,11 @@ quotecommands.push(registerCommand({
 
 
 
+      
+
 onUnload: () => {
 
-  quotecommand();
+  helloCmd();
 
 },
 
