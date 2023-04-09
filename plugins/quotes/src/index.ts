@@ -15,7 +15,7 @@ export default {
                 //@ts-ignore
                 applicationId: -1,
                 inputType: 1,
-                choices: [{
+                options: [{
                     name: "age",
 
                     displayName: "age",
