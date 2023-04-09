@@ -31,6 +31,7 @@ export default {
               if (!response.ok) {
                 throw new Error(`${response.status}: ${response.statusText}`);
               }
+              return { content: response };
               let data = await response.json();
               return { content: data };
             } catch (error) {
