@@ -62,7 +62,7 @@ quotecommands.push(registerCommand({
 
   required: false
 
-  applicationId: -1,
+  // applicationId: -1;
 
   inputType: 1,
 
