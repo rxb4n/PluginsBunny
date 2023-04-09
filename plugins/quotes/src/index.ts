@@ -48,7 +48,7 @@ export default {
                 logger.log('Error: ', jqXHR.responseText);
               }
             });
-            return { content resultData };
+            return { content: resultData };
           }
         }
       }))
