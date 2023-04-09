@@ -132,8 +132,6 @@ quotecommands.push(registerCommand({
 
 
 
-      
-
 onUnload: () => {
 
   quotecommand();
