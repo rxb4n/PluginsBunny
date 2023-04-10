@@ -43,7 +43,7 @@ export const onLoad = () => {
         content: "Error. Check the logs and contact Breado#5112 on Discord. ",
       };
     }
-  },
+  }
 
 
 export const onUnload = () => {
