@@ -1,4 +1,4 @@
- 
+ // Rubber Ducky #1385 helped me significantly improving my code and fix some pretty big bugs! THANK YOU!! 
 
 import { logger } from "@vendetta";
 
