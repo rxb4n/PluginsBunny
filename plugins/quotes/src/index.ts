@@ -1,3 +1,5 @@
+ 
+
 import { logger } from "@vendetta";
 
 import { registerCommand } from "@vendetta/commands";
@@ -5,22 +7,17 @@ import { registerCommand } from "@vendetta/commands";
 let quoteCMD = [];
 
 async function getQuote() {
-  const response = await fetch('https://api.quotable.io/quotes/random');
+  const response = await fetch("https://api.quotable.io/quotes/random");
   const data = await response.json();
   return data;
 }
-const quote = await getQuote()
+const quote = await getQuote();
 
 export default {
-
   onLoad: () => {
-
     try {
-
       quoteCMD.push(
-
         registerCommand({
-
           name: "quote",
 
           displayName: "quote",
@@ -35,34 +32,21 @@ export default {
 
           inputType: 1,
 
-          execute: async () => { 
-             
-
-                return { content: quote };
-
-
-            
-          }
-
+          execute: async () => {
+            return { content: quote };
+          },
         })
-
       );
-
     } catch (err) {
-
       logger.log(err);
 
-      return { content: "Error. Check the logs and contact Breado#5112 on Discord. " };
-
+      return {
+        content: "Error. Check the logs and contact Breado#5112 on Discord. ",
+      };
     }
-
   },
-
 };
 
 export const onUnload = () => {
-
   for (const unregisterCommands of commands) unregisterCommands();
-
 };
-
