@@ -11,7 +11,7 @@ async function getQuote() {
   const data = await response.json();
   return data['0']['content'];
 }
-const quote = await getQuote();
+//const quote = await getQuote();
 
 export default {
   onLoad: () => {
@@ -33,7 +33,7 @@ export default {
           inputType: 1,
 
           execute: async () => {
-            return { content: quote };
+            return { content: await getQuote() };
           },
         })
       );
