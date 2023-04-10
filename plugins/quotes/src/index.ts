@@ -14,7 +14,7 @@ async function getQuote() {
 //const quote = await getQuote();
 
 export const onLoad = () => {
-    try {
+
       quoteCMD = registerCommand({
 
           name: "quote",
@@ -27,7 +27,7 @@ export const onLoad = () => {
 
           type: 1,
 
-          applicationId: -1,
+          applicationId: "-1",
 
           inputType: 1,
 
@@ -37,12 +37,7 @@ export const onLoad = () => {
           },
         })
 
-    } catch (err) {
-      logger.log(err);
 
-      return {
-        content: "Error. Check the logs and contact Breado#5112 on Discord. ",
-      };
     }
   }
 
