@@ -32,7 +32,8 @@ export const onLoad = () => {
           inputType: 1,
 
           execute: async () => {
-            return { content: await getQuote() };
+            const quote = await getQuote();
+            return { content: `${quote.text} ~ ${quote.author}`};
           },
         })
 
