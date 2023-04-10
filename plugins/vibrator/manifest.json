@@ -1,0 +1,27 @@
+{
+
+    "name": "Vibrator",
+
+    "description": "Yes. Im serious. Its a vibrator...",
+
+    "authors": [
+
+        {
+
+            "name": "Breado",
+
+            "id": "1034473954636726334"
+
+        }
+
+    ],
+
+    "main": "src/index.ts",
+
+    "vendetta": {
+
+        "icon": "ic_badge_staff"
+
+    }
+
+}
