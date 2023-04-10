@@ -13,11 +13,10 @@ async function getQuote() {
 }
 //const quote = await getQuote();
 
-export default {
-  onLoad: () => {
+export const onLoad = () => {
     try {
-      quoteCMD.push(
-        registerCommand({
+      quoteCMD = registerCommand({
+
           name: "quote",
 
           displayName: "quote",
@@ -36,7 +35,7 @@ export default {
             return { content: await getQuote() };
           },
         })
-      );
+
     } catch (err) {
       logger.log(err);
 
@@ -48,5 +47,5 @@ export default {
 };
 
 export const onUnload = () => {
-  for (const unregisterCommands of commands) unregisterCommands();
+  quoteCMD();
 };
