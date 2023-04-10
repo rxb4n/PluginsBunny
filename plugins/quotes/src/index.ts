@@ -9,7 +9,7 @@ async function getQuote() {
   const data = await response.json();
   return data;
 }
-const quote = getQuote()
+const quote = await getQuote()
 
 export default {
 
