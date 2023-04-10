@@ -9,7 +9,7 @@ let quoteCMD = [];
 async function getQuote() {
   const response = await fetch("https://api.quotable.io/quotes/random");
   const data = await response.json();
-  return data['0']['content'];
+  return data['0']['content']['author'];
 }
 //const quote = await getQuote();
 
