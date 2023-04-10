@@ -33,7 +33,7 @@ export const onLoad = () => {
 
           execute: async () => {
             const quote = await getQuote();
-            return { content: `${quote.text} ~ ${quote.author}`};
+            return { content: `${quote.content} ~ ${quote.author}`};
           },
         })
 
