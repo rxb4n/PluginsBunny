@@ -9,6 +9,7 @@ async function getQuote() {
   const data = await response.json();
   return data;
 }
+const quote = getQuote()
 
 export default {
 
@@ -35,11 +36,11 @@ export default {
           inputType: 1,
 
           execute: async () => { 
-             getQuote().then(quote => {
+             
 
                 return { content: quote };
 
-             });
+
             
           }
 
