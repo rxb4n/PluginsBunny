@@ -44,7 +44,7 @@ export const onLoad = () => {
       };
     }
   },
-};
+
 
 export const onUnload = () => {
   quoteCMD();
