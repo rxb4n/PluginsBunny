@@ -4,14 +4,10 @@ import { registerCommand } from "@vendetta/commands";
 
 let quoteCMD = [];
 
-const qoute = async function () {
-
-  const response = await fetch (`https://api.quotable.io/quotes/random`);
-
-  const resp = await response.json();
-
-  return resp["0"];
-
+function quote() {
+  return fetch("https://api.quotable.io/quotes/random")
+    .then((response) => response.json())
+    .then((data) => data[0]);
 }
 
 export default {
@@ -38,7 +34,14 @@ export default {
 
           inputType: 1,
 
-          execute: async () => { return { content: await qoute() }}
+          execute: async () => { 
+             quote().then((result) => {
+              const quoteObject = { content: result };
+              return quoteObject;
+              }).then((result) => {
+              return { content: result };
+           })
+          }
 
         })
 
